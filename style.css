@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Benne', serif ;
+}
+
+
+/* Navbar */
+.navi {
+    display: flex;
+    background-color: rgb(8, 71, 73);
+    justify-content: space-around;
+    color: rgb(12, 11, 11);
+    height: 60px;
+    align-items: center;
+    letter-spacing: 3px;
+}
+.navi .logo {
+    font-family: 'Roboto', sans-serif;;
+    letter-spacing: 20px;
+}
+.navi .uli {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+nav ul li a {
+    color: rgb(12, 11, 11);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+nav ul li a:hover {
+    color: rgb(107, 159, 175);
+}
+/* Hamburger Menu Toggle Animation */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    left: -5px;
+    top: -4px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span {
+    display: block;
+    width: 29px;
+    height: 4px;
+    background-color: red;
+    border-radius: 3px;
+    transition: all 0.4ms;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+/* END Hamburger Menu Toggle Animation */
+
+/* BreakPoint [TABLET]*/
+@media only screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+  }
+
+/* BreakPoint [HP] */
+@media only screen and(max-width: 578px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul  {
+       display: none;
+    }
+  }
+
+
+
+ 
